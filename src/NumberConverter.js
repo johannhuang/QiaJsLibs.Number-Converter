@@ -1,5 +1,5 @@
 class NumberConverter {
-  static formate(number, type='decimal', options={}) {
+  static formate(number, type='decimal', typeInResult=false, options={}) {
     let result = '';
     
     const polish = (value) => {
@@ -22,22 +22,25 @@ class NumberConverter {
     switch (type.toLowerCase()) {
       case '%':
       case '％':
-        result = `${polish(number * 100)}%`;
+        result = polish(number * 100);
+        result += typeInResult ? '%' : '';
         break;
       case '‰':
-        result = `${polish(number * 1000)}‰`;
+        result = polish(number * 1000);
+        result += typeInResult ? '‰' : '';
         break;
       case '万':
-        result = `${polish(number / 10000)}万`;
+        result = polish(number / 10000);
+        result += typeInResult ? '万' : '';
         break;
       case 'binary':
-        result = `0b${number.toString(2)}`;
+        result = `0b${number.toString(2).split('.')[0]}`;
         break;
       case 'octal':
-        result = `0o${number.toString(8)}`;
+        result = `0o${number.toString(8).split('.')[0]}`;
         break;
       case 'hexadecimal':
-        result = `0x${number.toString(16)}`;
+        result = `0x${number.toString(16).split('.')[0]}`;
         break;
       case 'exponential':
         result = number.toExponential();
@@ -48,11 +51,57 @@ class NumberConverter {
         break;
     }
 
-    return result; // String(number);
+    return result; // String(result);
   }
 
-  static parse(numberString, type='decimal') {
-    return Number.parseInt(numberString);
+  static parse(numberString, type='decimal', typeInInput=false, options={}) {
+    let result = 0;
+
+    const polish = (value) => {
+      let theValue = Number(value);
+
+      return theValue;
+    };
+
+    let theNumberString = '';
+    let number = 0;
+    switch (type.toLowerCase()) {
+      case '%':
+      case '％':
+        theNumberString = typeInInput ? String(numberString).slice(0, -type.length) : numberString;
+        number = Number(theNumberString);
+        result = polish(number / 100);
+        break;
+      case '‰':
+        theNumberString = typeInInput ? String(numberString).slice(0, -type.length) : numberString;
+        number = Number(theNumberString);
+        result = polish(number / 1000);
+        break;
+      case '万':
+        theNumberString = typeInInput ? String(numberString).slice(0, -type.length) : numberString;
+        number = Number(theNumberString);
+        result = polish(number * 10000);
+        break;
+      case 'binary':
+        result = Number(numberString);
+        break;
+      case 'octal':
+        result = Number(numberString);
+        break;
+      case 'hexadecimal':
+        result = Number(numberString);
+        break;
+      case 'exponential':
+        result = Number(numberString);
+        break;
+      case 'decimal':
+      default:
+        number = Number(numberString);
+        result = polish(number);
+        break;
+    }
+
+    return result; // Number.parseFloat(result);
   }
 }
 
