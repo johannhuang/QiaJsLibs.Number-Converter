@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/johannhuang/number-converter.git"
+    "url": "git+https://github.com/johannhuang/qiajslib-number-converter.git"
   },
   "keywords": [
     "Number",
@@ -17,7 +17,7 @@
   "author": "Johann Huang <johann.qiang.huang@gmail.com> (https://www.johannhuang.com)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/johannhuang/number-converter/issues"
+    "url": "https://github.com/johannhuang/qiajslib-number-converter/issues"
   },
-  "homepage": "https://github.com/johannhuang/number-converter#readme"
+  "homepage": "https://github.com/johannhuang/qiajslib-number-converter#readme"
 }

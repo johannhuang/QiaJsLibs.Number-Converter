@@ -1,5 +1,7 @@
-# My rules
-_*
+# Customized
+~*
++*
+qiajslib-number-converter.code-workspace
 
 # Logs
 logs
