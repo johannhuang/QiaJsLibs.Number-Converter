@@ -1,6 +1,6 @@
 {
   "name": "@johannhuang/number-converter",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A number converter class",
   "main": "index.js",
   "scripts": {
