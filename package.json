@@ -1,14 +1,14 @@
 {
   "name": "@johannhuang/number-converter",
   "version": "1.2.2",
-  "description": "A number converter class.",
+  "description": "A number converter class",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/johannhuang/qiajslib-number-converter.git"
+    "url": "git+https://github.com/johannhuang/qiajslib--number-converter.git"
   },
   "keywords": [
     "Number",
@@ -17,7 +17,7 @@
   "author": "Johann Huang <johann.qiang.huang@gmail.com> (https://www.johannhuang.com)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/johannhuang/qiajslib-number-converter/issues"
+    "url": "https://github.com/johannhuang/qiajslib--number-converter/issues"
   },
-  "homepage": "https://github.com/johannhuang/qiajslib-number-converter#readme"
+  "homepage": "https://github.com/johannhuang/qiajslib--number-converter#readme"
 }
